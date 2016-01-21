@@ -1,0 +1,76 @@
+<p id="notice"><%= notice %></p>
+
+<div class="row">
+  <div class="col-md-5 col-md-offset-1">
+    <h3><strong>Producto:</strong> <%= @product.name %></h3>
+    <h3><strong>Descripcion:</strong> <%= @product.description %><br></h3>
+    <h3><strong>Existencias:</strong> <%= @product.quantity %><br></h3>              
+    <h3><strong>Precio:</strong> <%= @product.cost %><br></h3>
+  </div>
+  <div class="col-md-6 ">
+    <%= image_tag @product.image.url(:medium),class: "img-responsive img-rounded" %>
+  </div>
+</div> 
+
+
+  
+ 
+  
+
+
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h3><strong>Productos de entrada</strong></h3>
+    <table class="table table-bordered table-hover table-striped table-responsive">
+      <tr>
+        <td>Fecha de entrada</td>
+        <td>Cantidad de entrada</td>      
+      </tr>
+      <% @inputs.each do |inp| %>     
+      <tr>         
+        <td><%= inp.created_at %></td>
+        <td><%= inp.quantity_input %></td>        
+      </tr>
+      <% end %>
+     </table>
+  </div>
+</div><br>
+
+<div class="row">
+  <div class="col-md-8 col-md-offset-2">
+    <h3><strong>Productos de Salida</strong></h3>
+     <table class="table table-bordered table-hover table-striped table-responsive">
+      <tr>
+        <td>Fecha de salida</td>
+        <td>Cantidad de salida</td>
+      </tr>
+      <% @outputs.each do |out| %>    
+      <tr>
+        
+        <td><%= out.created_at %></td>
+        <td><%= out.quantity_ouput  %></td>
+            
+      </tr>
+      <% end %>    
+     </table>
+  </div>
+</div>
+
+     
+
+
+      
+
+
+  
+  
+ 
+
+  
+ 
+  
+
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>

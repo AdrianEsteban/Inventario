@@ -1,0 +1,11 @@
+<li class="col-md-2">
+	<%= link_to 'Hogar', "/products/home" %>
+</li>
+
+<li class="col-md-2">
+	<%= link_to 'Electronica', "/products/electronic" %>
+</li>
+
+<li class="col-md-2">
+	<%= link_to 'Alimentos', "/products/aliments" %>
+</li>  

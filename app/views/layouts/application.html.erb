@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Inventario</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+
+	<nav class="be-red white large-padding">
+	  <ul class="row center-xs middle-xs">
+	    <li class="col-md-2">
+	      <%= link_to 'Inicio', "/products/" %>
+	    </li>
+	    <% @categories.each do |category|%>
+	    	<li class="col-md-2">
+	    		<%= link_to category.name, category %>	    		
+	    	</li>
+
+	    <% end %>	   
+	    
+	    <li class="col-md-2">
+	      <%= link_to 'Crear Nuevo Producto', new_product_path, class: "btn btn-success btn-sm" %>
+	    </li>
+	    
+	  </ul>
+	</nav><br>
+<%= yield %>
+</body>
+</html>

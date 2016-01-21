@@ -1,0 +1,2 @@
+module ProEntriesHelper
+end

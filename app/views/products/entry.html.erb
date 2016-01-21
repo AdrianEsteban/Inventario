@@ -1,0 +1,41 @@
+<%= form_for(@input) do |f| %>
+  <% if @input.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@input.errors.count, "error") %> prohibited this input from being saved:</h2>
+
+      <ul>
+      <% @input.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <div class="row">
+      <div class="col-md-6  col-sm-8 col-xs-8 col-md-offset-3 col-xs-offset-2 col-sm-offset-2 centered" >
+          <div class="col-md-8 col-md-offset-2">
+            <h1>Alta de productos</h1>
+          </div>
+          <div class="col-md-6 text-left col-md-offset-3" >
+            <h2> <%= @product.name %><br></h1>
+            <h3>Descripcion <%= @product.description %><br></h3>
+            <h3>Existencias <%= @product.quantity %><br></h3> 
+            <h3>Precio <%= @product.cost %><br></h3> 
+          </div>
+          <div class="form-group col-md-6 col-md-offset-3">
+            <div class="col-md-12">
+                
+                 <%= f.number_field :quantity_input , placeholder: "Entrada de productos", class: "form-control"%>
+            </div>
+          </div>
+          <div class="field">
+            <%= f.hidden_field :products_id, :value => @product.id%>
+          </div>
+
+          <div class="actions col-md-8 col-md-offset-3" >
+            <%= f.submit "Enviar productos", class: "btn btn-primary btn-sm" %>  
+          </div>
+      </div> 
+      
+    </div>  
+ 
+<% end %>
